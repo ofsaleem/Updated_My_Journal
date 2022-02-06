@@ -8,12 +8,12 @@ using XRL.World.Effects;
 
 namespace Mods.UpdatedMyJournal
 {
-    [HarmonyPatch(typeof(XRL.Messages.MessageQueue))]
+    [HarmonyPatch(typeof(Qud.API.JournalAPI))]
     class UpdatedMyJournal
     {
         [HarmonyPrefix]
-        [HarmonyPatch("Add")]
-        static void Prefix(ref string Message)
+        [HarmonyPatch("AddAccomplishments")]
+        static void Postfix(ref string Message)
         {
             Message = "{{chaotic|" + Message + "}}";
         }

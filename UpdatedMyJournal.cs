@@ -3,14 +3,10 @@ using XRL.World; // for GameObject
 
 namespace Mods.UpdatedMyJournal
 {
-    [HarmonyPatch(typeof(Qud.API.JournalAPI))]
+    [HarmonyPatch(typeof(Qud.API.IBaseJournalEntry))]
     class UpdatedMyJournal
     {
-        [HarmonyPatch("AddAccomplishments")]
-        [HarmonyPatch("AddGeneralNote")]
-        [HarmonyPatch("AddMapNote")]
-        [HarmonyPatch("AddObservation")]
-        [HarmonyPatch("AddRecipeNote")]
+        [HarmonyPatch("Reveal")]
         static void Postfix()
         {
             PlayJournalLine();
@@ -19,6 +15,7 @@ namespace Mods.UpdatedMyJournal
         private static void PlayJournalLine()
         {
             IComponent<GameObject>.PlayUISound("updated-my-journal");
+            XRL.Messages.MessageQueue.AddPlayerMessage("Hello, Im a message!");
         }
     }
 }

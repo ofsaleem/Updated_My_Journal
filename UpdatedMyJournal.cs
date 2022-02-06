@@ -15,7 +15,6 @@ namespace Mods.UpdatedMyJournal
         private static void PlayJournalLine()
         {
             IComponent<GameObject>.PlayUISound("updated-my-journal");
-            XRL.Messages.MessageQueue.AddPlayerMessage("Hello, Im a message!");
         }
     }
 }

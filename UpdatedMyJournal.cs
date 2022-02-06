@@ -11,16 +11,19 @@ namespace Mods.UpdatedMyJournal
     [HarmonyPatch(typeof(Qud.API.JournalAPI))]
     class UpdatedMyJournal
     {
-        [HarmonyPrefix]
         [HarmonyPatch("AddAccomplishments")]
-        static void Postfix(ref string Message)
+        [HarmonyPatch("AddGeneralNote")]
+        [HarmonyPatch("AddMapNote")]
+        [HarmonyPatch("AddObservation")]
+        [HarmonyPatch("AddRecipeNote")]
+        static void Postfix()
         {
-            Message = "{{chaotic|" + Message + "}}";
+            PlayJournalLine();
         }
 
-        private static void PlaySound(GameObject obj)
+        private static void PlayJournalLine()
         {
-            obj.PlayWorldSound("updated-my-journal");
+            IComponent<GameObject>.PlayUISound("updated-my-journal");
         }
     }
 }

@@ -1,0 +1,8 @@
+{
+  "WorkshopId": 2744653858,
+  "Title": "Updated My Journal",
+  "Description": "Adds the \"Updated My Journal\" voice line from Planescape: Torment to Qud whenever you update your journal.\n\nCurrently has a few issues:\n* Always plays on login and logout, it seems.\n* Does not play for new Quest updates (technically they don't go in your Journal). Not sure if should be changed.\n* Always plays for player created Map Notes. Not sure if should be changed, you are in fact updating your journal, but it can be kind of annoying when you are setting 20-30 notes at once, like for pinning all the vendors in the Six Day Stilt",
+  "Tags": "journal, sound, fluff, script",
+  "Visibility": "0",
+  "ImagePath": "preview.png"
+}

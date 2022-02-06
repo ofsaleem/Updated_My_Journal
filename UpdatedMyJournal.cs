@@ -1,10 +1,5 @@
 using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-using XRL.Rules;
 using XRL.World; // for GameObject
-using XRL.World.Effects;
 
 namespace Mods.UpdatedMyJournal
 {
